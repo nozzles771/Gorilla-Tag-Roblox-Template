@@ -40,6 +40,19 @@ Assets and models are based on Gorilla Tag's **House Update** and are not fully 
 - Infection
 - Hunt
 
+### Lobby Leaderboard
+- Gorilla Tag-style lobby leaderboard
+- Displays all players currently in your room
+- Displays Room ID and current Game Mode
+- Shows player names and colors
+- Player color swatches change to infected/hunted textures when tagged
+- Speaker indicators for players currently talking
+- Individual MUTE buttons for players
+- Mute preferences saved to player profiles
+- REPORT interface with Hate Speech, Toxicity and Cheating options
+
+> **Note:** The reporting interface is currently visual only. A future update is planned to introduce functional report submissions through Discord webhooks or other supported reporting services.
+
 ### Cosmetics
 - Working Cosmetic Wardrobe
 - House Update Cosmetics
@@ -78,24 +91,16 @@ Devices that do not support VR use a recreation of **Gorilla Tag Mod Walk Simula
 
 VR players retain the intended Gorilla Tag-style movement system.
 
-## Latest Updates
+## Bug Fixes & Improvements
 
-### UI Improvements
-
-**Mobile UI**
-- Adjusted mobile button sizes
-- Updated mobile button icons
-- Improved the overall mobile UI appearance
-
-**Gorilla Computer**
-- Updated the Gorilla Computer UI across all devices
+- Fixed players falling off the map without respawning
+- Fixed respawns sometimes placing players back at their previous death or fall location
+- Improved respawn reliability
+- Updated mobile button sizes and icons
+- Improved mobile UI appearance
+- Updated Gorilla Computer UI across all devices
 - Improved the color-changing interface
-- Made changing player colors easier and more accessible
-- Improved the overall visual design
-
-**General UI**
-- Improved UI consistency across devices
-- General visual refinements and improvements
+- General UI refinements and visual improvements
 
 ---
 
@@ -120,6 +125,8 @@ So far, my own additions include:
 - Updated Mobile UI
 - Updated Gorilla Computer UI
 - Improved Color Changing Interface
+- Lobby Leaderboard
+- Player Mute Functionality
 
 I plan to continue expanding the template with new features, bug fixes, improvements, and general maintenance.
 
