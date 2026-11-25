@@ -29,6 +29,9 @@ Assets and models are based on Gorilla Tag's **House Update** and are not fully 
 ### Gorilla Computer
 - Gorilla Tag Computer System
 - Computer Tabs based on the House Update
+- Updated Computer UI across all devices
+- Improved Color Changing Interface
+- Easier Player Color Customization
 
 > **Note:** The computer interface and tabs are based on the House Update. The newer 2026 computer redesign and additional tabs are not included.
 
@@ -75,6 +78,25 @@ Devices that do not support VR use a recreation of **Gorilla Tag Mod Walk Simula
 
 VR players retain the intended Gorilla Tag-style movement system.
 
+## Latest Updates
+
+### UI Improvements
+
+**Mobile UI**
+- Adjusted mobile button sizes
+- Updated mobile button icons
+- Improved the overall mobile UI appearance
+
+**Gorilla Computer**
+- Updated the Gorilla Computer UI across all devices
+- Improved the color-changing interface
+- Made changing player colors easier and more accessible
+- Improved the overall visual design
+
+**General UI**
+- Improved UI consistency across devices
+- General visual refinements and improvements
+
 ---
 
 ## Credits & Acknowledgements
@@ -95,6 +117,9 @@ So far, my own additions include:
 - Working Cosmetic Mirror
 - Cosmetic Try-On Functionality
 - Bug Fixes and Errors Found in Stormie's Template and Scripts
+- Updated Mobile UI
+- Updated Gorilla Computer UI
+- Improved Color Changing Interface
 
 I plan to continue expanding the template with new features, bug fixes, improvements, and general maintenance.
 
