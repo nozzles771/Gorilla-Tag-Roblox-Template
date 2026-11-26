@@ -164,6 +164,25 @@ The reporting system supports actual report submissions through Discord webhooks
 
 > **Note:** Configure your webhook and spam limits through the `ReportSettings` script. Keep your webhook URL private and avoid sharing it publicly.
 
+### Developer Tutorials
+
+Step-by-step tutorials are included to help developers set up and customize their Gorilla Tag-inspired games.
+
+All tutorials can be found in:
+
+`ReplicatedStorage > GT > Tutorials`
+
+Available tutorials:
+
+1. **First Setup** - Helps developers get started with the template.
+2. **Add a Map** - Explains how to add custom maps.
+3. **Reports (Discord)** - Explains how to configure Discord webhook reporting.
+4. **Room Codes** - Explains how to set up and use room codes.
+5. **Robux Shop (ATM)** - Explains the Robux shop setup.
+6. **Cosmetics** - Explains how to set up cosmetics.
+
+> **Note:** These tutorials are intended for developers working with the template and are designed to make setting up and customizing your game easier.
+
 ## Platform Compatibility
 
 This template supports multiple platforms, allowing players to experience the game regardless of their device.
@@ -230,6 +249,7 @@ So far, my own additions include:
 - Daily Shiny Rocks Rewards
 - Physical Lobby Board Buttons
 - Additional Mirror Functionality
+- Developer Setup Tutorials
 
 I plan to continue expanding the template with new features, bug fixes, improvements, and general maintenance.
 
