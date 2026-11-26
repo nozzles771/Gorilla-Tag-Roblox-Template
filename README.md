@@ -22,11 +22,13 @@ Assets and models are based on Gorilla Tag's **House Update** and are not fully 
 ## Features
 
 ### Player
+
 - Gorilla Tag Player Model
 - Working Player Color Codes
 - Custom Player Names
 
 ### Gorilla Computer
+
 - Gorilla Tag Computer System
 - Computer Tabs based on the House Update
 - Updated Computer UI across all devices
@@ -36,11 +38,13 @@ Assets and models are based on Gorilla Tag's **House Update** and are not fully 
 > **Note:** The computer interface and tabs are based on the House Update. The newer 2026 computer redesign and additional tabs are not included.
 
 ### Game Modes
+
 - Casual
 - Infection
 - Hunt
 
 ### Lobby Leaderboard
+
 - Gorilla Tag-style lobby leaderboard
 - Displays all players currently in your room
 - Displays Room ID and current Game Mode
@@ -50,10 +54,13 @@ Assets and models are based on Gorilla Tag's **House Update** and are not fully 
 - Individual MUTE buttons for players
 - Mute preferences saved to player profiles
 - REPORT interface with Hate Speech, Toxicity and Cheating options
-
-> **Note:** The reporting interface is currently visual only. A future update is planned to introduce functional report submissions through Discord webhooks or other supported reporting services.
+- Reports are submitted through a Discord webhook
+- Reports are printed in the server output
+- Report submissions cannot ping Discord users or roles
+- Configurable webhook and spam limits through the `ReportSettings` script
 
 ### Cosmetics
+
 - Working Cosmetic Wardrobe
 - House Update Cosmetics
 - Thanksgiving Cosmetics
@@ -62,8 +69,14 @@ Assets and models are based on Gorilla Tag's **House Update** and are not fully 
 - Early Access Cosmetics
 - Working Cosmetic Try-On Station
 - Working Mirror
+- Fixed mirror reflections
+- Try-on boxes and ATMs display correctly in mirrors
+- Optional follow-your-view mirror functionality
+
+> **Note:** To enable follow-your-view functionality, set `GTMirrorFollowView = true` on the mirror glass.
 
 ### Currency & Purchasing
+
 - Working Currency System
 - Cosmetic Purchasing System
 - Persistent Currency Saving
@@ -72,9 +85,56 @@ Assets and models are based on Gorilla Tag's **House Update** and are not fully 
 > **Note:** The purchasing system may not be an exact 1:1 recreation of Gorilla Tag's original system, but the functionality is implemented.
 
 ### Room Codes
-- Room Code System
 
-> **Known Limitation:** Room codes do not currently transfer players into separate rooms. Entering another room code makes other players invisible, creating the appearance of a separate room. This is planned to be fixed in a future update.
+- Room Code System
+- Room codes send players into their own actual servers
+- Players disconnecting from a code server return to a public server
+- Joining a public room from a code server also returns players to a public server
+- Studio retains the original room-code behavior for testing
+
+> **Note:** Roblox teleportation does not work normally in Studio. Room codes therefore use their original behavior when testing inside Studio. Actual server transfers work in published games.
+
+### Map Connect Zones & Custom Maps
+
+- Added support for custom map connection zones
+- Players can walk into connect zones to join a specific map's lobby
+- Supports custom map names without requiring script changes
+- Added dedicated map spawn locations
+- Connect zones appear see-through green in Studio
+- Connect zones are hidden during gameplay
+- Includes a Test Map with working connect zones and a spawn point
+
+#### Adding Map Connect Zones
+
+To create a connect zone for your map:
+
+1. Create a Part where you want players to enter the map.
+2. Add the `GTPublicConnect` tag to the Part.
+3. Set the `GTMap` attribute to the name of the map lobby you want players to join.
+4. Players walking into the zone will be connected to that map's lobby.
+
+#### Adding Map Spawns
+
+To configure spawn locations for a map:
+
+1. Create a Part where players should respawn.
+2. Add the `GTMapSpawn` tag to the Part.
+3. Configure the spawn for the appropriate map.
+
+Multiple spawn locations can be used for a map.
+
+> **Note:** Custom map names are supported without needing to modify any scripts. A Test Map is included in the template to help developers understand how connect zones and map spawns work.
+
+### Reports & Webhook Setup
+
+The reporting system now supports actual report submissions through Discord webhooks.
+
+- Reports are sent to a configured Discord webhook.
+- The `ReportSettings` script controls the webhook link and spam limits.
+- Reports cannot ping Discord users or roles.
+- Reports are also printed in the server output.
+
+> **Note:** Configure your webhook and spam limits through the `ReportSettings` script. Keep your webhook URL private and avoid sharing it publicly.
 
 ## Platform Compatibility
 
@@ -100,6 +160,11 @@ VR players retain the intended Gorilla Tag-style movement system.
 - Improved mobile UI appearance
 - Updated Gorilla Computer UI across all devices
 - Improved the color-changing interface
+- Fixed mirror reflections looking incorrect
+- Fixed try-on boxes and ATMs displaying incorrectly in mirrors
+- Fixed players getting stuck without a lobby after disconnecting
+- Players can rejoin a public lobby by walking away from the computer or entering the lobby zone
+- Improved room code server transfers
 - General UI refinements and visual improvements
 
 ---
@@ -127,6 +192,11 @@ So far, my own additions include:
 - Improved Color Changing Interface
 - Lobby Leaderboard
 - Player Mute Functionality
+- Functional Discord Webhook Reporting
+- Improved Room Code System
+- Map Connect Zones and Custom Map Support
+- Map Spawn System
+- Additional Mirror Functionality
 
 I plan to continue expanding the template with new features, bug fixes, improvements, and general maintenance.
 
