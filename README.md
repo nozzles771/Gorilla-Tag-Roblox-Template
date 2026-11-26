@@ -53,11 +53,12 @@ Assets and models are based on Gorilla Tag's **House Update** and are not fully 
 - Speaker indicators for players currently talking
 - Individual MUTE buttons for players
 - Mute preferences saved to player profiles
-- REPORT interface with Hate Speech, Toxicity and Cheating options
-- Reports are submitted through a Discord webhook
-- Reports are printed in the server output
-- Report submissions cannot ping Discord users or roles
-- Configurable webhook and spam limits through the `ReportSettings` script
+- Physical 3D MUTE and REPORT buttons
+- Report reason buttons are also physical 3D buttons
+- Buttons can be pressed using your finger in VR
+- PC and mobile players can click or tap the buttons
+- Buttons sink when pressed and turn red when active
+- Buttons only appear on rows containing other players
 
 ### Cosmetics
 
@@ -81,8 +82,14 @@ Assets and models are based on Gorilla Tag's **House Update** and are not fully 
 - Cosmetic Purchasing System
 - Persistent Currency Saving
 - Saved Cosmetic Purchases
+- Daily Shiny Rocks rewards
+- Players receive 100 Shiny Rocks every 24 hours by default
+- Daily reward amount can be configured using `DailyCoins` in `Config`
+- Daily Shiny Rocks sign displays a countdown until the next reward
+- Currency board timer matches each player's personal daily reward timer
+- Players staying in-game past 24 hours can still receive their daily reward
 
-> **Note:** The purchasing system may not be an exact 1:1 recreation of Gorilla Tag's original system, but the functionality is implemented.
+> **Note:** The daily reward amount can be changed through `DailyCoins` in the `Config` script.
 
 ### Room Codes
 
@@ -102,18 +109,30 @@ Assets and models are based on Gorilla Tag's **House Update** and are not fully 
 - Added dedicated map spawn locations
 - Connect zones appear see-through green in Studio
 - Connect zones are hidden during gameplay
-- Includes a Test Map with working connect zones and a spawn point
+- Supports separate-server and same-server map connections
+- Includes example maps for both connection methods
 
-#### Adding Map Connect Zones
+#### Public Map Connect Zones (Green)
 
-To create a connect zone for your map:
+To create a public map connection zone:
 
 1. Create a Part where you want players to enter the map.
 2. Add the `GTPublicConnect` tag to the Part.
 3. Set the `GTMap` attribute to the name of the map lobby you want players to join.
-4. Players walking into the zone will be connected to that map's lobby.
+4. Players walking into the zone will be connected to that map's own servers.
 
-#### Adding Map Spawns
+#### Same-Server Map Connect Zones (Red)
+
+The original same-server map connection method is still available.
+
+1. Create a Part where you want players to enter the map.
+2. Add the `GTPublicConnect` tag to the Part.
+3. Set the `GTMap` attribute to the name of the map.
+4. Set `GTSameServer = true` on the zone.
+
+This allows players to move between maps without being sent to a separate server.
+
+#### Map Spawns
 
 To configure spawn locations for a map:
 
@@ -123,16 +142,25 @@ To configure spawn locations for a map:
 
 Multiple spawn locations can be used for a map.
 
-> **Note:** Custom map names are supported without needing to modify any scripts. A Test Map is included in the template to help developers understand how connect zones and map spawns work.
+#### Included Test Maps
+
+- **Test Map:** Example of the public map connection system using green zones.
+- **Test Map 2:** Example of the original same-server connection system using red zones.
+
+> **Note:** Custom map names are supported without needing to modify any scripts.
 
 ### Reports & Webhook Setup
 
-The reporting system now supports actual report submissions through Discord webhooks.
+The reporting system supports actual report submissions through Discord webhooks.
 
 - Reports are sent to a configured Discord webhook.
-- The `ReportSettings` script controls the webhook link and spam limits.
+- The `ReportSettings` script controls the webhook URL and spam limits.
 - Reports cannot ping Discord users or roles.
 - Reports are also printed in the server output.
+- Reports include the reporting player's username, display name, User ID and profile link.
+- Reports include the reported player's username, display name, User ID and profile link.
+- Reports include a Join This Server link.
+- Reports include the reported player's User ID for use when banning through the Creator Dashboard.
 
 > **Note:** Configure your webhook and spam limits through the `ReportSettings` script. Keep your webhook URL private and avoid sharing it publicly.
 
@@ -163,9 +191,12 @@ VR players retain the intended Gorilla Tag-style movement system.
 - Fixed mirror reflections looking incorrect
 - Fixed try-on boxes and ATMs displaying incorrectly in mirrors
 - Fixed players getting stuck without a lobby after disconnecting
-- Players can rejoin a public lobby by walking away from the computer or entering the lobby zone
-- Improved room code server transfers
-- General UI refinements and visual improvements
+- Improved room code server handling
+- Fixed REPORT instantly selecting a reason when report reason buttons appear in VR
+- Improved lobby board button interactions
+- Fixed daily Shiny Rocks not being awarded
+- Improved daily reward countdown accuracy
+- Improved map connection handling
 
 ---
 
@@ -196,6 +227,8 @@ So far, my own additions include:
 - Improved Room Code System
 - Map Connect Zones and Custom Map Support
 - Map Spawn System
+- Daily Shiny Rocks Rewards
+- Physical Lobby Board Buttons
 - Additional Mirror Functionality
 
 I plan to continue expanding the template with new features, bug fixes, improvements, and general maintenance.
