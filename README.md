@@ -13,21 +13,23 @@ You can access the template using either of the following methods:
 
 ## ⚠️ Disclaimer
 
-This is an **unofficial, fan-made Gorilla Tag Roblox template**. It is not affiliated with, endorsed by, or sponsored by **Another Axiom**.
+This is an unofficial, fan-made Gorilla Tag Roblox template. It is not affiliated with, endorsed by, or sponsored by Another Axiom.
 
-All Gorilla Tag models and assets included in this project are the property of **Another Axiom**. This project does not claim ownership of any original Gorilla Tag assets.
+All Gorilla Tag models and assets included in this project are the property of Another Axiom. This project does not claim ownership of any original Gorilla Tag assets.
 
-Assets and models are based on Gorilla Tag's **House Update** and are not fully updated to the current 2026 version.
+Assets and models are based on Gorilla Tag's House Update and are not fully updated to the current 2026 version.
 
-## Features
+---
 
-### Player
+# Features
+
+## Player
 
 - Gorilla Tag Player Model
 - Working Player Color Codes
 - Custom Player Names
 
-### Gorilla Computer
+## Gorilla Computer
 
 - Gorilla Tag Computer System
 - Computer Tabs based on the House Update
@@ -37,13 +39,13 @@ Assets and models are based on Gorilla Tag's **House Update** and are not fully 
 
 > **Note:** The computer interface and tabs are based on the House Update. The newer 2026 computer redesign and additional tabs are not included.
 
-### Game Modes
+## Game Modes
 
 - Casual
 - Infection
 - Hunt
 
-### Lobby Leaderboard
+## Lobby Leaderboard
 
 - Gorilla Tag-style lobby leaderboard
 - Displays all players currently in your room
@@ -60,7 +62,7 @@ Assets and models are based on Gorilla Tag's **House Update** and are not fully 
 - Buttons sink when pressed and turn red when active
 - Buttons only appear on rows containing other players
 
-### Cosmetics
+## Cosmetics
 
 - Working Cosmetic Wardrobe
 - House Update Cosmetics
@@ -76,7 +78,7 @@ Assets and models are based on Gorilla Tag's **House Update** and are not fully 
 
 > **Note:** To enable follow-your-view functionality, set `GTMirrorFollowView = true` on the mirror glass.
 
-### Currency & Purchasing
+## Currency & Purchasing
 
 - Working Currency System
 - Cosmetic Purchasing System
@@ -89,9 +91,9 @@ Assets and models are based on Gorilla Tag's **House Update** and are not fully 
 - Currency board timer matches each player's personal daily reward timer
 - Players staying in-game past 24 hours can still receive their daily reward
 
-> **Note:** The daily reward amount can be changed through `DailyCoins` in the `Config` script.
+> **Note:** The daily reward amount can be changed through the `DailyCoins` script in `Config`.
 
-### Room Codes
+## Room Codes
 
 - Room Code System
 - Room codes send players into their own actual servers
@@ -101,7 +103,7 @@ Assets and models are based on Gorilla Tag's **House Update** and are not fully 
 
 > **Note:** Roblox teleportation does not work normally in Studio. Room codes therefore use their original behavior when testing inside Studio. Actual server transfers work in published games.
 
-### Map Connect Zones & Custom Maps
+## Map Connect Zones & Custom Maps
 
 - Added support for custom map connection zones
 - Players can walk into connect zones to join a specific map's lobby
@@ -112,7 +114,7 @@ Assets and models are based on Gorilla Tag's **House Update** and are not fully 
 - Supports separate-server and same-server map connections
 - Includes example maps for both connection methods
 
-#### Public Map Connect Zones (Green)
+### Public Map Connect Zones (Green)
 
 To create a public map connection zone:
 
@@ -121,7 +123,7 @@ To create a public map connection zone:
 3. Set the `GTMap` attribute to the name of the map lobby you want players to join.
 4. Players walking into the zone will be connected to that map's own servers.
 
-#### Same-Server Map Connect Zones (Red)
+### Same-Server Map Connect Zones (Red)
 
 The original same-server map connection method is still available.
 
@@ -132,7 +134,7 @@ The original same-server map connection method is still available.
 
 This allows players to move between maps without being sent to a separate server.
 
-#### Map Spawns
+### Map Spawns
 
 To configure spawn locations for a map:
 
@@ -142,14 +144,65 @@ To configure spawn locations for a map:
 
 Multiple spawn locations can be used for a map.
 
-#### Included Test Maps
+### Included Test Maps
 
-- **Test Map:** Example of the public map connection system using green zones.
-- **Test Map 2:** Example of the original same-server connection system using red zones.
+- Test Map: Example of the public map connection system using green zones.
+- Test Map 2: Example of the original same-server connection system using red zones.
 
 > **Note:** Custom map names are supported without needing to modify any scripts.
 
-### Reports & Webhook Setup
+---
+
+# Developer Tips
+
+This section contains additional visual guides and tips to help developers understand how to configure the template.
+
+## Tip 1: Lobby Zone (Rejoining the Lobby)
+
+![Lobby Zone](images/05%20Lobby%20Zone%20%28rejoin%20lobby%29%20-%20labeled.jpg)
+
+The lobby zone is used to send players back to a public lobby.
+
+- No `GTMap` attribute is needed.
+- Place the zone on the way back to the lobby.
+- Players can walk into it after disconnecting to rejoin a public lobby.
+
+## Tip 2: Green Zone (Own Servers)
+
+![Green Zone](images/06%20Green%20Zone%20%28own%20servers%29%20-%20labeled.jpg)
+
+Green zones connect players to a map's own servers.
+
+- `GTMap` = `TESTMAP`
+- `GTSameServer` = `false`
+- Teleports players to that map's servers.
+- The map spawn should use the same `GTMap` name.
+
+## Tip 3: Red Zone (Same Server)
+
+![Red Zone](images/07%20Red%20Zone%20%28same%20server%29%20-%20labeled.jpg)
+
+Red zones allow players to move between maps while staying in their current server.
+
+- `GTMap` = `TESTMAP2`
+- `GTSameServer` = `true`
+- No server teleportation occurs.
+- Players stay in their current server.
+- The map spawn should use the same `GTMap` name.
+
+## Tip 4: Connect Back to Lobby
+
+![Back To Lobby Zone](images/08%20Back%20To%20Lobby%20Zone%20-%20labeled.jpg)
+
+Use this zone when you want players to return to the lobby from a map.
+
+- `GTMap` = `FOREST`
+- Place the zone on the way back.
+- Sends players back to the lobby.
+
+---
+
+## Reports & Webhook Setup
 
 The reporting system supports actual report submissions through Discord webhooks.
 
@@ -164,7 +217,7 @@ The reporting system supports actual report submissions through Discord webhooks
 
 > **Note:** Configure your webhook and spam limits through the `ReportSettings` script. Keep your webhook URL private and avoid sharing it publicly.
 
-### Developer Tutorials
+## Developer Tutorials
 
 Step-by-step tutorials are included to help developers set up and customize their Gorilla Tag-inspired games.
 
@@ -174,31 +227,35 @@ All tutorials can be found in:
 
 Available tutorials:
 
-1. **First Setup** - Helps developers get started with the template.
-2. **Add a Map** - Explains how to add custom maps.
-3. **Reports (Discord)** - Explains how to configure Discord webhook reporting.
-4. **Room Codes** - Explains how to set up and use room codes.
-5. **Robux Shop (ATM)** - Explains the Robux shop setup.
-6. **Cosmetics** - Explains how to set up cosmetics.
+1. First Setup - Helps developers get started with the template.
+2. Add a Map - Explains how to add custom maps.
+3. Reports (Discord) - Explains how to configure Discord webhook reporting.
+4. Room Codes - Explains how to set up and use room codes.
+5. Robux Shop (ATM) - Explains the Robux shop setup.
+6. Cosmetics - Explains how to set up cosmetics.
 
 > **Note:** These tutorials are intended for developers working with the template and are designed to make setting up and customizing your game easier.
 
-## Platform Compatibility
+---
+
+# Platform Compatibility
 
 This template supports multiple platforms, allowing players to experience the game regardless of their device.
 
-- **PC:** Supported
-- **Mobile:** Supported
-- **VR:** Supported with working Gorilla Tag-style VR movement
-- **Console:** Supported
+- PC: Supported
+- Mobile: Supported
+- VR: Supported with working Gorilla Tag-style VR movement
+- Console: Supported
 
-### Non-VR Movement
+## Non-VR Movement
 
-Devices that do not support VR use a recreation of **Gorilla Tag Mod Walk Simulator**, providing an alternative movement experience for PC, mobile and console players.
+Devices that do not support VR use a recreation of Gorilla Tag Mod Walk Simulator, providing an alternative movement experience for PC, mobile and console players.
 
 VR players retain the intended Gorilla Tag-style movement system.
 
-## Bug Fixes & Improvements
+---
+
+# Bug Fixes & Improvements
 
 - Fixed players falling off the map without respawning
 - Fixed respawns sometimes placing players back at their previous death or fall location
@@ -219,15 +276,15 @@ VR players retain the intended Gorilla Tag-style movement system.
 
 ---
 
-## Credits & Acknowledgements
+# Credits & Acknowledgements
 
-### Original Template
+## Original Template
 
-This project originally started as an addition to **Stormie's GTAGMovementKit**. The original template served as the foundation for this project.
+This project originally started as an addition to Stormie's GTAGMovementKit. The original template served as the foundation for this project.
 
-Full credit goes to **Stormie** for creating and providing the original template.
+Full credit goes to Stormie for creating and providing the original template.
 
-### Independent Development
+## Independent Development
 
 With permission from Stormie, I have continued developing and updating this template independently. Stormie considered the original template finished, but I felt there was still more potential for additional features, improvements, and functionality.
 
@@ -253,6 +310,6 @@ So far, my own additions include:
 
 I plan to continue expanding the template with new features, bug fixes, improvements, and general maintenance.
 
-**This project is an independent continuation of Stormie's original template and is not affiliated with or officially supported by Stormie or Another Axiom.**
+This project is an independent continuation of Stormie's original template and is not affiliated with or officially supported by Stormie or Another Axiom.
 
-**More features and improvements will be added as development continues.**
+More features and improvements will be added as development continues.
